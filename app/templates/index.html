@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    {% if title %}
-    <title>{{ title }}</title>
-    {% else %}
-    <title>NEWS HIGHLIGHT</title>
-    {% endif %}
-  </head>
-  <body>
+{% extends 'base.html' %}
 
-  </body>
-</html>
+{% block content %}
+<h2>News Sources</h2>
+<ul>
+ {% for source in sources %}
+ <div class="col-md-3 jumbotron">
+   <li>{{source.id}}<strong>{{source.name}}</strong></li>
+   <a href="/articles/{{source.id}}">Articles</a>
+ </div>
+ {% endfor %}
+</ul>
+
+{% endblock %}
