@@ -10,9 +10,9 @@ def index():
     message = 'News Highlight'
     return render_template('index.html',message=message, sources=sources)
 
-@main.route('/news/<id>')
-def news(id):
-    articles = get_articles(id)
+@main.route('/news/<source_id>')
+def news(source_id):
+    articles = get_articles(source_id)
     print(articles)
 
 
