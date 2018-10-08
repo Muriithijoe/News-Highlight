@@ -19,7 +19,7 @@ def get_sources(source):
   Function that gets the json response to our url request
   '''
 
-  get_source_url = base_url_source.format(source,api_key)
+  get_source_url = base_url_source.format(api_key)
   with urllib.request.urlopen(get_source_url) as url:
       get_source_data = url.read()
       get_source_response = json.loads(get_source_data)
