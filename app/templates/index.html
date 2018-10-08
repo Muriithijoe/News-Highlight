@@ -3,6 +3,7 @@
 {% block content %}
 <h2>News Highlights</h2>
 <h3>For all top headlines for news around the world</h3>
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
 <ul>
  {% for source in sources %}
  <div class="col-md-3 jumbotron">
