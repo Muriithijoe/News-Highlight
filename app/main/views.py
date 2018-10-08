@@ -6,12 +6,11 @@ from ..request import get_sources, get_articles
 
 @main.route('/')
 def index():
-    sources = get_sources()
-    print(sources)
+    sources = get_sources('sources')
     message = 'News Highlight'
     return render_template('index.html',message=message, sources=sources)
 
-@main.route('/news/<int:id>')
+@main.route('/news/<id>')
 def news(id):
     articles = get_articles(id)
     print(articles)
