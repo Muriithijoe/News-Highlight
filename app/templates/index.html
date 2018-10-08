@@ -2,14 +2,23 @@
 
 {% block content %}
 <h2>News Highlights</h2>
-<h3>For all top headlines for news around the world</h3>
+<h4>For all top headlines for news around the world</h4>
 <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+<link href="https://fonts.googleapis.com/css?family=K2D" rel="stylesheet">
 <ul>
  {% for source in sources %}
- <div class="col-md-3 jumbotron">
-   <li><strong>{{source.name}}</strong></li>
-   <a href="/news/{{source.id}}">Articles</a>
+
+  <div class="col-md-3">
+    <div class="panel panel-warning">
+      <div class="panel-body">
+        <div class="col-md-3">
+          <li><strong>{{source.name}}</strong></li>
+          <a href="/news/{{source.id}}">Articles</a>
+        </div>
+     </div>
+   </div>
  </div>
+
  {% endfor %}
 </ul>
 
